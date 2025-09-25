@@ -1,0 +1,21 @@
+-- 
+CREATE TABLE Employees (
+  ID INT PRIMARY KEY,
+  Name VARCHAR(255) NOT NULL,
+  Age INT DEFAULT NULL
+);
+
+-- INSERT operations
+INSERT INTO Employees (ID, Name, Age) VALUES (1, 'John Doe', 30);
+INSERT INTO Employees (ID, Name) VALUES (2, 'Jane Doe'); -- Age will be NULL
+
+-- UPDATE operations
+UPDATE Employees SET Age = 31 WHERE ID = 1;
+UPDATE Employees SET Age = Age + 1 WHERE Age > 25;
+
+-- DELETE operations
+DELETE FROM Employees WHERE ID = 1;
+DELETE FROM Employees WHERE Age < 18;
+
+-- Checking for NULL values
+SELECT * FROM Employees WHERE Age IS NULL;
